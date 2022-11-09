@@ -122,8 +122,8 @@ if(isset($message)){
          <h3 data-aos="zoom-in"> <span>age : </span> 20 years </h3>
          <h3 data-aos="zoom-in"> <span>experience : </span> 2+ years </h3>
       </div>
-
-      <a href="#" class="btn" data-aos="fade-up">download CV</a>
+<!-- 
+      <a href="#" class="btn" data-aos="fade-up">download CV</a> -->
 
    </div>
    
