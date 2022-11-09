@@ -74,11 +74,11 @@ if(isset($message)){
    </nav>
 
    <div class="follow">
-      <a href="#" class="fab fa-facebook-f"></a>
+      <a href="https://www.facebook.com/lon.ademi.758" class="fab fa-facebook-f"></a>
       <a href="#" class="fab fa-twitter"></a>
-      <a href="#" class="fab fa-instagram"></a>
-      <a href="#" class="fab fa-linkedin"></a>
-      <a href="#" class="fab fa-github"></a>
+      <a href="https://www.instagram.com/_leonard.ademi/" class="fab fa-instagram"></a>
+      <a href="https://www.linkedin.com/in/leonard-ademi-ab606923a/" class="fab fa-linkedin"></a>
+      <a href="https://github.com/leoademi" class="fab fa-github"></a>
    </div>
 
 </header>
