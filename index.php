@@ -1,3 +1,27 @@
+<?php
+
+$conn = mysqli_connect('localhost','root','','contact_db') or die('connection failed');
+
+if(isset($_POST['send'])){
+
+   $name = mysqli_real_escape_string($conn, $_POST['name']);
+   $email = mysqli_real_escape_string($conn, $_POST['email']);
+   $number = mysqli_real_escape_string($conn, $_POST['number']);
+   $msg = mysqli_real_escape_string($conn, $_POST['message']);
+
+   $select_message = mysqli_query($conn, "SELECT * FROM `contact_form` WHERE name = '$name' AND email = '$email' AND number = '$number' AND message = '$msg'") or die('query failed');
+   
+   if(mysqli_num_rows($select_message) > 0){
+      $message[] = 'message sent already!';
+   }else{
+      mysqli_query($conn, "INSERT INTO `contact_form`(name, email, number, message) VALUES('$name', '$email', '$number', '$msg')") or die('query failed');
+      $message[] = 'message sent successfully!';
+   }
+
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +41,8 @@
 
 </head>
 <body>
-?php
+
+<?php
 
 if(isset($message)){
    foreach($message as $message){
@@ -31,6 +56,8 @@ if(isset($message)){
 }
 
 ?>
+
+<!-- header section starts  -->
 
 <header class="header">
 
@@ -56,6 +83,10 @@ if(isset($message)){
 
 </header>
 
+<!-- header section ends -->
+
+<!-- home section starts  -->
+
 <section class="home" id="home">
 
    <div class="image" data-aos="fade-right">
@@ -70,6 +101,10 @@ if(isset($message)){
    </div>
 
 </section>
+
+<!-- home section ends -->
+
+<!-- about section starts  -->
 
 <section class="about" id="about">
 
@@ -91,66 +126,242 @@ if(isset($message)){
       <a href="#" class="btn" data-aos="fade-up">download CV</a>
 
    </div>
-
+   
    <div class="skills" data-aos="fade-up">
 
-<h1 class="heading"> <span>skills</span> </h1>
+      <h1 class="heading"> <span>skills</span> </h1>
 
-<div class="progress">
-   <div class="bar" data-aos="fade-left"> <h3><span>HTML</span> <span>95%</span></h3> </div>
-   <div class="bar" data-aos="fade-right"> <h3><span>CSS</span> <span>90%</span></h3> </div>
-   <div class="bar" data-aos="fade-left"> <h3><span>JavaScript</span> <span>80%</span></h3> </div>
-   <div class="bar" data-aos="fade-right"> <h3><span>PHP</span> <span>85%</span></h3> </div>
-   
-</div>
+      <div class="progress">
+         <div class="bar" data-aos="fade-left"> <h3><span>HTML</span> <span>95%</span></h3> </div>
+         <div class="bar" data-aos="fade-right"> <h3><span>CSS</span> <span>90%</span></h3> </div>
+         <div class="bar" data-aos="fade-left"> <h3><span>JavaScript</span> <span>80%</span></h3> </div>
+         <div class="bar" data-aos="fade-right"> <h3><span>PHP</span> <span>85%</span></h3> </div>
+         
+      </div>
 
-</div>
+   </div>
 
-<div class="edu-exp">
+   <div class="edu-exp">
 
-<h1 class="heading" data-aos="fade-up"> <span>education & experience</span> </h1>
+      <h1 class="heading" data-aos="fade-up"> <span>education & experience</span> </h1>
 
-<div class="row">
+      <div class="row">
+
+         <div class="box-container">
+
+            <h3 class="title" data-aos="fade-right">education</h3>
+
+            <div class="box" data-aos="fade-right">
+               <span>( 2017 - 2020 )</span>
+               <h3>College</h3>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+            </div>
+
+            <div class="box" data-aos="fade-right">
+               <span>( 2020 - 2023 )</span>
+               <h3>Bachelor's Degree</h3>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+            </div>
+
+         
+
+         </div>
+
+         <div class="box-container">
+
+            <h3 class="title" data-aos="fade-left">experience</h3>
+
+            <div class="box" data-aos="fade-left">
+               <span>( 2019 - 2020 )</span>
+               <h3>front-end developer</h3>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+            </div>
+
+            <div class="box" data-aos="fade-left">
+               <span>( 2021 - 2022 )</span>
+               <h3>full-stack developer</h3>
+               <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+            </div>
+
+         </div>
+
+      </div>
+
+   </div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- services section starts  -->
+
+<section class="services" id="services">
+
+   <h1 class="heading" data-aos="fade-up"> <span>services</span> </h1>
 
    <div class="box-container">
 
-      <h3 class="title" data-aos="fade-right">education</h3>
-
-      <div class="box" data-aos="fade-right">
-         <span>( 2017 - 2020 )</span>
-         <h3>College</h3>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-code"></i>
+         <h3>web development</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
       </div>
 
-      <div class="box" data-aos="fade-right">
-         <span>( 2020 - 2023 )</span>
-         <h3>Bachelor's Degree</h3>
-         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-paint-brush"></i>
+         <h3>graphic design</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
       </div>
 
-      
+      <div class="box" data-aos="zoom-in">
+         <i class="fab fa-bootstrap"></i>
+         <h3>bootstrap</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
       </div>
 
-<div class="box-container">
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-chart-line"></i>
+         <h3>seo marketing</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
+      </div>
 
-   <h3 class="title" data-aos="fade-left">experience</h3>
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-bullhorn"></i>
+         <h3>digital marketing</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
+      </div>
 
-   <div class="box" data-aos="fade-left">
-      <span>( 2019 - 2020 )</span>
-      <h3>front-end developer</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+      <div class="box" data-aos="zoom-in">
+         <i class="fab fa-wordpress"></i>
+         <h3>wordpress</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat, placeat veritatis accusantium nostrum rem ipsa.</p>
+      </div>
+
    </div>
-
-   <div class="box" data-aos="fade-left">
-      <span>( 2021 - 2022 )</span>
-      <h3>full-stack developer</h3>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
-   </div>
-
-</div>
-
-</div>
-
-</div>
 
 </section>
+
+<!-- services section ends -->
+
+<!-- portfolio section starts  -->
+
+<section class="portfolio" id="portfolio">
+
+   <h1 class="heading" data-aos="fade-up"> <span>portfolio</span> </h1>
+
+   <div class="box-container">
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-1.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-2.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-3.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-4.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-5.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <img src="images/img-6.jpg" alt="">
+         <h3>web development</h3>
+         <span>( 2020 - 2022 )</span>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- portfolio section ends -->
+
+<!-- contact section starts  -->
+
+<section class="contact" id="contact">
+
+   <h1 class="heading" data-aos="fade-up"> <span>contact me</span> </h1>
+
+   <form action="" method="post">
+      <div class="flex">
+         <input data-aos="fade-right" type="text" name="name" placeholder="enter your name" class="box" required>
+         <input data-aos="fade-left" type="email" name="email" placeholder="enter your email" class="box" required>
+      </div>
+      <input data-aos="fade-up" type="number" min="0" name="number" placeholder="enter your number" class="box" required>
+      <textarea data-aos="fade-up" name="message" class="box" required placeholder="enter your message" cols="30" rows="10"></textarea>
+      <input type="submit" data-aos="zoom-in" value="send message" name="send" class="btn">
+   </form>
+
+   <div class="box-container">
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-phone"></i>
+         <h3>phone</h3>
+         <p>+383-45-888-983</p>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-envelope"></i>
+         <h3>email</h3>
+         <p>leonardademi126@gmail.com</p>
+      </div>
+
+      <div class="box" data-aos="zoom-in">
+         <i class="fas fa-map-marker-alt"></i>
+         <h3>address</h3>
+         <p>Prishtine,Kosovo - 10000  </p>
+      </div>
+
+   </div>
+
+</section>
+
+<!-- contact section ends -->
+
+<div class="credit"> &copy; copyright @ <?php echo date('Y'); ?> by <span>mr.Leonard</span> </div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- custom js file link  -->
+<script src="js/script.js"></script>
+
+<!-- aos js link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+<script>
+
+   AOS.init({
+      duration:800,
+      delay:300
+   });
+
+</script>
+   
+</body>
+</html>
