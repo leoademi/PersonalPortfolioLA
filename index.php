@@ -252,38 +252,38 @@ if(isset($message)){
    <div class="box-container">
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-1.jpg" alt="">
+         <img src="images/img-1.png" alt="">
          <h3>web development</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-2.jpg" alt="">
-         <h3>web development</h3>
+         <img src="images/img-2.png" alt="">
+         <h3>mobile development</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-3.jpg" alt="">
-         <h3>web development</h3>
+         <img src="images/img-3.png" alt="">
+         <h3>software development</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-4.jpg" alt="">
-         <h3>web development</h3>
+         <img src="images/img-4.png" alt="">
+         <h3>web design</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-5.jpg" alt="">
-         <h3>web development</h3>
+         <img src="images/img-5.png" alt="">
+         <h3>ui/ux design</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
       <div class="box" data-aos="zoom-in">
-         <img src="images/img-6.jpg" alt="">
-         <h3>web development</h3>
+         <img src="images/img-6.png" alt="">
+         <h3>web maintenance</h3>
          <span>( 2020 - 2022 )</span>
       </div>
 
