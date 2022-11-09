@@ -91,3 +91,66 @@ if(isset($message)){
       <a href="#" class="btn" data-aos="fade-up">download CV</a>
 
    </div>
+
+   <div class="skills" data-aos="fade-up">
+
+<h1 class="heading"> <span>skills</span> </h1>
+
+<div class="progress">
+   <div class="bar" data-aos="fade-left"> <h3><span>HTML</span> <span>95%</span></h3> </div>
+   <div class="bar" data-aos="fade-right"> <h3><span>CSS</span> <span>90%</span></h3> </div>
+   <div class="bar" data-aos="fade-left"> <h3><span>JavaScript</span> <span>80%</span></h3> </div>
+   <div class="bar" data-aos="fade-right"> <h3><span>PHP</span> <span>85%</span></h3> </div>
+   
+</div>
+
+</div>
+
+<div class="edu-exp">
+
+<h1 class="heading" data-aos="fade-up"> <span>education & experience</span> </h1>
+
+<div class="row">
+
+   <div class="box-container">
+
+      <h3 class="title" data-aos="fade-right">education</h3>
+
+      <div class="box" data-aos="fade-right">
+         <span>( 2017 - 2020 )</span>
+         <h3>College</h3>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+      </div>
+
+      <div class="box" data-aos="fade-right">
+         <span>( 2020 - 2023 )</span>
+         <h3>Bachelor's Degree</h3>
+         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+      </div>
+
+      
+      </div>
+
+<div class="box-container">
+
+   <h3 class="title" data-aos="fade-left">experience</h3>
+
+   <div class="box" data-aos="fade-left">
+      <span>( 2019 - 2020 )</span>
+      <h3>front-end developer</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+   </div>
+
+   <div class="box" data-aos="fade-left">
+      <span>( 2021 - 2022 )</span>
+      <h3>full-stack developer</h3>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quaerat assumenda, eaque sequi repellat natus quia.</p>
+   </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
